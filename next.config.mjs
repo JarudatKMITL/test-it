@@ -1,16 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     eslint: {
-        ignoreDuringBuilds: true, // ข้ามการตรวจสอบ ESLint ตอน build
+        // ข้ามการตรวจสอบ ESLint ตอน build
+        ignoreDuringBuilds: true,
     },
     typescript: {
-        ignoreBuildErrors: true, // ข้ามการตรวจสอบ TypeScript (ถ้ามี)
+        // ข้ามการตรวจสอบ TypeScript ตอน build
+        ignoreBuildErrors: true,
     },
     experimental: {
-        turbo: true, // เปิดใช้งาน Turbo Pack (ถ้าใช้)
+        // เปิดใช้งาน Turbo Pack
+        turbo: true,
+        appDir: true, // ใช้โครงสร้าง `app` ถ้ามี
     },
     images: {
-        domains: ['picsum.photos', 'firebasestorage.googleapis.com'], // ระบุโดเมนของภาพที่อนุญาต
+        // ระบุโดเมนของภาพที่อนุญาต
+        domains: ['picsum.photos', 'firebasestorage.googleapis.com'],
     },
     webpack: (config, { dev }) => {
         if (dev) {
