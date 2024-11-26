@@ -11,7 +11,6 @@ const nextConfig = {
     experimental: {
         // เปิดใช้งาน Turbo Pack
         turbo: {},
-        appDir: true, // ใช้โครงสร้าง `app` ถ้ามี
     },
     images: {
         // ระบุโดเมนของภาพที่อนุญาต
