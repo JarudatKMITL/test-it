@@ -10,7 +10,7 @@ const nextConfig = {
     },
     experimental: {
         // เปิดใช้งาน Turbo Pack
-        turbo: true,
+        turbo: {},
         appDir: true, // ใช้โครงสร้าง `app` ถ้ามี
     },
     images: {
