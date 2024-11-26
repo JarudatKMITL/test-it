@@ -1,32 +1,30 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     eslint: {
-        // ข้ามการตรวจสอบ ESLint ตอน build
         ignoreDuringBuilds: true,
     },
     typescript: {
-        // ข้ามการตรวจสอบ TypeScript ตอน build
         ignoreBuildErrors: true,
     },
     experimental: {
-        // เปิดใช้งาน Turbo Pack
-        turbo: {},
-        appDir: true,
+        turbo: {}, // เปิดใช้งาน Turbo Pack
+        appDir: true, // เปิด App Directory
     },
     images: {
-        // ระบุโดเมนของภาพที่อนุญาต
         domains: ['picsum.photos', 'firebasestorage.googleapis.com'],
     },
     webpack: (config, { dev }) => {
         if (dev) {
-            // ตั้งค่าเฉพาะในโหมด development
             config.watchOptions = {
-                poll: 1000, // ตรวจสอบไฟล์เปลี่ยนแปลงทุก 1 วินาที
-                aggregateTimeout: 300, // หน่วงเวลาเล็กน้อยก่อนโหลดใหม่
+                poll: 1000,
+                aggregateTimeout: 300,
             };
         }
         return config;
     },
+    // กำหนดให้ Next.js มองหาโฟลเดอร์ `src` เป็น root
+    basePath: '',
+    pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
 };
 
 export default nextConfig;
